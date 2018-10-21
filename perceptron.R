@@ -6,7 +6,7 @@ calculate_distance <- function(x,w,b){
   sum(x*w)+b
 }
 
-linear_classifer <- function(x,w,b){
+linear_classifier <- function(x,w,b){
   distance <- apply(x, 1,calculate_distance,w,b)
   return(ifelse((distance<0),-1,1))
 }
@@ -60,3 +60,6 @@ perceptron = function(x, y, learning_rate=1) {
   #scale the classifier with unit vector
   return(list(w=w/s,b=b/s,updates=k))
 }
+
+#train the perceptron
+p <- perceptron(x,1)
